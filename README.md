@@ -1,4 +1,14 @@
 # Master of Quotes app
+[https://quotes-db-mike.herokuapp.com/](https://quotes-db-mike.herokuapp.com/)
+
+`GET: /quotes/
+      POST: /quotes/
+      PUT: /quotes/:id
+      DELETE: /quotes/:id
+AUTH Endpoints Both these endpoints will return a token:
+      POST: /auth/register - expects {username: "username", password: "password"}
+      POST: /auth/login - expects {username: "username", password: "password"}
+      Both return a token that will allow a user to access the quote endpoint`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
