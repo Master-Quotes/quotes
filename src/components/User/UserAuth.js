@@ -1,18 +1,19 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from "react-router-dom";
-// import axios from 'axios';
 
 // IMPORT UTILITIES
 import { axiosWithAuth } from "../../utilities/axiosWithAuth";
 
 // IMPORT CONTEXTS
-import GlobalContext from "../../context/GlobalConetext";
+// import GlobalContext from "../../context/GlobalContext";
 import UserContext from "../../context/UserContext";
 import SessionContext from "../../context/SessionContext";
 
 const UserAuth = ({role}) => {
 
-	const { history } = useContext(GlobalContext);
+	let history = useHistory();
+
+	// const { history } = useContext(GlobalContext);
 	const { login, setLogin } = useContext(UserContext);
 	const { setSession } = useContext(SessionContext);
 

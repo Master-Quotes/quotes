@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
 import ProtectedRoute                                   from "./utilities/ProtectedRoute"
 
 // IMPORT CONTEXTS
-import GlobalContext                                    from "./context/GlobalConetext";
+// import GlobalContext                                    from "./context/GlobalContext";
 import UserContext                                      from "./context/UserContext";
 import SessionContext                                   from "./context/SessionContext";
 import QuoteContext                                     from "./context/QuoteContext";
@@ -25,7 +25,7 @@ import UserAuth                                         from "./components/User/
 
 function App() {
 
-  let history                                           = useHistory();
+  // let history                                           = useHistory();
 
   const [session, setSession]                           = useState(!!localStorage.getItem("token"));
   const [login, setLogin]                               = useState(User);
@@ -33,7 +33,7 @@ function App() {
 
   return (
     <Router>
-      <GlobalContext.Provider value={{history}}>
+      {/*<GlobalContext.Provider value={{history}}>*/}
         <UserContext.Provider value={{ login, setLogin }}>
           <SessionContext.Provider value={{ session, setSession }}>
             <QuoteContext.Provider value={{ quote, setQuote }}>
@@ -57,7 +57,7 @@ function App() {
             </QuoteContext.Provider>
           </SessionContext.Provider>
         </UserContext.Provider>
-      </GlobalContext.Provider>
+      {/*</GlobalContext.Provider>*/}
     </Router>
   );
 }
