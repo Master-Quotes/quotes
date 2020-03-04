@@ -5,9 +5,9 @@ import QuotesList from "../Quote/QuoteList";
 
 const ContentSessionIn = () => {
 	return (
-		<div>
+		<>
 			<QuotesList />
-		</div>
+		</>
 	)
 };
 

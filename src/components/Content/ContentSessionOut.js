@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const ContentSessionOut = () => {
 	return (
-		<div>
+		<>
 			<Link to={`/user/login`}>Login</Link>
 			<Link to={`/user/register`}>Register</Link>
-		</div>
+		</>
 	)
 };
 
