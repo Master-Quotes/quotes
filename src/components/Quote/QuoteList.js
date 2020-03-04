@@ -9,10 +9,10 @@ import QuoteContext from "../../context/QuoteContext";
 const QuotesList = () => {
 
 	const { quote, setQuote } = useContext(QuoteContext);
-	
+
 	return (
 		<section className="cards-quotes">
-			(Quotes go here)
+			"(Quotes go here)"
 		</section>
 	)
 };
