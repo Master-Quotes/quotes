@@ -1,0 +1,33 @@
+*
+	font-family 'Roboto', sans-serif
+
+h1
+	font-family 'Roboto Slab', serif
+	//margin-bottom 2rem
+	//margin-top 0
+	
+p
+	font-size 1.25rem
+
+input, button, textarea, &.button
+	border 4px solid primary
+	border-radius 0
+	box-sizing border-box
+	font-size 1.25rem
+	margin-right 5px
+	padding 0.5rem
+	width auto
+	//margin-bottom 8px
+	&:last-child
+		margin-right 0
+	@media screen and (min-width 1001px)
+		width auto
+
+input, textarea
+	background-color #f0f0f0
+	border-radius 0
+	outline 0
+	width 100%
+	&:focus
+		background-color white
+		border-color green
