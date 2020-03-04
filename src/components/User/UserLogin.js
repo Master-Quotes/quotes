@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { axiosWithAuth } from "../../utilities/axiosWithAuth";
 
 // IMPORT CONTEXTS
+import GlobalContext from "../../context/GlobalConetext";
 import UserContext from "../../context/UserContext";
 import SessionContext from "../../context/SessionContext";
 
@@ -14,10 +15,9 @@ import User                               from "./User";
 
 const UserLogin = () => {
 
+	const { history } = useContext(GlobalContext);
 	const { login, setLogin } = useContext(UserContext);
 	const { session, setSession } = useContext(SessionContext);
-
-	let history = useHistory();
 
 	console.log("User: ", login);
 
