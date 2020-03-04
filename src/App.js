@@ -33,8 +33,8 @@ function App() {
         <SessionContext.Provider value={{ session, setSession }}>
           <div className="App">
             <Header />
-            <main>
-              <Route exact path="/" component={ContentSessionOut} />
+            <main id="main-content" className="main-content">
+              <Route exact path="/" component={Content} />
               <Route
                 path="/user/login"
                 render={ props => <UserAuth{...props} role="login" />}
