@@ -5,21 +5,20 @@ import axios from 'axios';
 // IMPORT UTILITIES
 import { axiosWithAuth }                  from "../../utilities/axiosWithAuth";
 
-
 // IMPORT CONTEXTS
 import LoggedContext                      from "../../context/LoggedContext";
 
+// IMPORT INITIAL STATE
+import User                               from "./User";
 
-const Login = () => {
+const UserLogin = () => {
 
 	const { logged, setLogged} = useContext(LoggedContext);
 
 	let history = useHistory();
 
-	const [login, setLogin] = useState({
-		username: "",
-		password: ""
-	});
+	const [login, setLogin] = useState(<User />);
+	console.log("User: ", login);
 
 	const handleSubmit = event => {
 		event.preventDefault();
@@ -44,7 +43,7 @@ const Login = () => {
 	};
 
 	return(
-		<div className="container">
+		<div className="form-container">
 			<form onSubmit={handleSubmit}>
 				<label>
 					Name:
