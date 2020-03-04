@@ -11,7 +11,7 @@
 |**Auth:**  |Endpoints Both these endpoints will return a token|
 |      |**POST:** /auth/register<br> - expects {username: "username", password: "password"}|
 |      |**POST:** /auth/login<br> - expects {username: "username", password: "password"}|
-|      |~ Both return a token that will allow a user to access the quote endpoint|
+|      |Both return a token that will allow a user to access the quote endpoint|
 
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
