@@ -22,6 +22,8 @@ import Header                                           from "./components/Layou
 import Footer                                           from "./components/Layout/Footer";
 import Content                                          from "./components/Content/Content";
 import UserAuth                                         from "./components/User/UserAuth";
+import QuotesList                                       from "./components/Quote/QuoteList";
+import QuoteAddForm                                     from "./components/Quote/QuoteAddForm";
 
 function App() {
 
@@ -50,7 +52,8 @@ function App() {
                       path="/user/register"
                       render={ props => <UserAuth{...props} role="register" />}
                     />
-                    <ProtectedRoute exact path="/quotes" />
+                    <ProtectedRoute exact path="/quotes" component={QuotesList} />
+                    <ProtectedRoute exact path="/quotes/add" component={QuoteAddForm} />
                   </div>
                 </main>
                 <Footer />
