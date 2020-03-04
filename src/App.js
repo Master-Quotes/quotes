@@ -50,6 +50,7 @@ function App() {
                       path="/user/register"
                       render={ props => <UserAuth{...props} role="register" />}
                     />
+                    <ProtectedRoute exact path="/quotes" />
                   </div>
                 </main>
                 <Footer />

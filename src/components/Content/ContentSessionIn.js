@@ -1,12 +1,12 @@
 import React from "react";
 
 // IMPORT APP COMPONENTS
-import QuotesList from "../Quote/QuoteList";
+import QuotesFeatured from "../Quote/QuoteFeatured";
 
 const ContentSessionIn = () => {
 	return (
 		<>
-			<QuotesList />
+			<QuotesFeatured />
 		</>
 	)
 };
