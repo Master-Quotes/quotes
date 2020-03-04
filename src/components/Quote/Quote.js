@@ -1,7 +1,7 @@
-const QuoteItem = {
+const Quote = {
 	quote:  "",
 	speaker: "",
 	featured: false
 };
 
-export default QuoteItem;
+export default Quote;

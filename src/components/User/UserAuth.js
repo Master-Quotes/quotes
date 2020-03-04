@@ -9,10 +9,10 @@ import { axiosWithAuth } from "../../utilities/axiosWithAuth";
 import UserContext from "../../context/UserContext";
 import SessionContext from "../../context/SessionContext";
 
-const UserRegister = () => {
+const UserAuth = ({role}) => {
 
 	const { login, setLogin } = useContext(UserContext);
-	const { session, setSession } = useContext(SessionContext);
+	const { setSession } = useContext(SessionContext);
 
 	let history = useHistory();
 
@@ -21,10 +21,11 @@ const UserRegister = () => {
 	const handleSubmit = event => {
 		event.preventDefault();
 		axiosWithAuth()
-			.post('https://quotes-db-mike.herokuapp.com/auth/register', login)
+			.post(`https://quotes-db-mike.herokuapp.com/auth/${role}`, login)
 			.then(response => {
 				console.log('response: ', response);
 				localStorage.setItem("token", response.data.token);
+				setSession(true);
 				history.push("/");
 			})
 			.catch(error => console.log('error: ', error));
@@ -39,7 +40,7 @@ const UserRegister = () => {
 
 	return(
 		<div className="form-container">
-			<h2>Register</h2>
+			<h2>Please, {role}</h2>
 			<form onSubmit={handleSubmit}>
 				<label>
 					Username:
@@ -70,4 +71,4 @@ const UserRegister = () => {
 	)
 };
 
-export default UserRegister;
+export default UserAuth;

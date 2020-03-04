@@ -1,35 +1,36 @@
-import React, { useState, useContext }    from 'react';
-import { useHistory }                     from "react-router-dom";
-import axios from 'axios';
+import React, { useState, useContext } from 'react';
+import { useHistory } from "react-router-dom";
+// import axios from 'axios';
 
 // IMPORT UTILITIES
-import { axiosWithAuth }                  from "../../utilities/axiosWithAuth";
+import { axiosWithAuth } from "../../utilities/axiosWithAuth";
 
 // IMPORT CONTEXTS
-import LoggedContext                      from "../../context/LoggedContext";
+import UserContext from "../../context/UserContext";
+import SessionContext from "../../context/SessionContext";
 
 // IMPORT INITIAL STATE
 import User                               from "./User";
 
 const UserLogin = () => {
 
-	const { logged, setLogged} = useContext(LoggedContext);
+	const { login, setLogin } = useContext(UserContext);
+	const { session, setSession } = useContext(SessionContext);
 
 	let history = useHistory();
 
-	const [login, setLogin] = useState(<User />);
 	console.log("User: ", login);
 
 	const handleSubmit = event => {
 		event.preventDefault();
-		axios
-			.post('https://quotes-db-mike.herokuapp.com/')
+		axiosWithAuth()
+			.post('http://quotes-db-mike.herokuapp.com/auth/login')
 			.then(response => {
 				console.log('response: ', response);
 				localStorage.setItem("token", response.data.payload);
 				setLogin(login);
-				setLogged(localStorage.getItem("token"));
-				console.log("Really logged? ", logged);
+				setSession(localStorage.getItem("token"));
+				console.log("Really logged? ", session);
 				history.push("/");
 			})
 			.catch(error => console.log('error: ', error));
@@ -44,24 +45,15 @@ const UserLogin = () => {
 
 	return(
 		<div className="form-container">
+			<h2>Login</h2>
 			<form onSubmit={handleSubmit}>
 				<label>
-					Name:
+					Username:
 					<input
 						type="text"
-						name="name"
+						name="username"
 						onChange={handleChange}
-						value={login.name}
-						required
-					/>
-				</label>
-				<label>
-					Email:
-					<input
-						type="email"
-						name="email"
-						value={login.email}
-						onChange={handleChange}
+						value={login.username}
 						required
 					/>
 				</label>
@@ -82,4 +74,6 @@ const UserLogin = () => {
 			</form>
 		</div>
 	)
-}
+};
+
+export default UserLogin;
