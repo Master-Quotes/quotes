@@ -68,6 +68,7 @@ const UserAuth = ({role}) => {
 				<input
 					type="submit"
 					value="Submit"
+					className="button"
 				/>
 			</form>
 		</div>
