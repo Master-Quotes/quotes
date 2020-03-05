@@ -42,7 +42,7 @@ const UserAuth = ({role}) => {
 	return(
 		<div className="form-container">
 			<div className="form-header">
-				<h2>Please, {role}</h2>
+				<h1>Please, {role}</h1>
 			</div>
 			<form onSubmit={handleSubmit}>
 				<label>

@@ -3,9 +3,12 @@ import React                 from "react";
 const Header = () => {
 	return (
 		<header id="header" className="header">
-			<h1 className="app-title">
-				Mo'Quotes
-			</h1>
+			<div id="branding" className="branding">
+				<span>
+					Mo'Quotes
+				</span>
+
+			</div>
 		</header>
 	)
 };
