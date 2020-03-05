@@ -1,25 +1,33 @@
 .form-container
-	border-radius 4px
-	box-shadow 0 12.1px 10px rgba(0, 0, 0, 0.035), 0 97px 80px rgba(0, 0, 0, 0.07)
-	overflow hidden
+	//border-radius 4px
+	//box-shadow 0 12.1px 10px rgba(0, 0, 0, 0.035), 0 97px 80px rgba(0, 0, 0, 0.07)
+	//overflow hidden
+	.form-header
+		text-align center
+		h2
+			margin 0 0 1rem
+			text-transform capitalize
 	form
 		background-color white
+		border-radius 4px
+		box-shadow 0 12.1px 10px rgba(0, 0, 0, 0.035), 0 97px 80px rgba(0, 0, 0, 0.07)
+		overflow hidden
 		padding 2rem
-		margin-bottom 2rem
-		h2
-			margin 0 0 0.83rem
-		.form-body
-			margin-bottom 0.5rem
-			label
-				color black
-			input, button
-				border-color primary
-			textarea
-				border-color primary
-		button
+		//margin-bottom 2rem
+		label
+			color black
+			display block
+			margin-bottom 0.8rem
+		input, button
+			border-color primary
+		textarea
+			border-color primary
+		.button
 			border-color primary
 			background-color primary
-			
+			width 100%
+		&:nth-child
+			margin-bottom 1rem
 +above(l)
 	.form-login
 		width 500px

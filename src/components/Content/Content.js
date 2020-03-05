@@ -12,13 +12,13 @@ const Content = () => {
 	const { session } = useContext(SessionContext);
 	console.log("Seesion true?: ", session);
 	return (
-		<section className="section section-container">
+		<>
 			{!session ? (
 				<ContentSessionOut />
 			) : (
 				<ContentSessionIn />
 			)}
-		</section>
+		</>
 	)
 };
 

@@ -42,7 +42,7 @@ function App() {
               <div className="App">
                 <Header />
                 <main id="main-content" className="main-content">
-                  <div className="container">
+                  <div className={!session ? ("container") : ("container")}>
                     <Route exact path="/" component={Content} />
                     <Route
                       path="/user/login"

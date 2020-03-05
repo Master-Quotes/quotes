@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 
 const ContentSessionOut = () => {
 	return (
-		<>
-			<Link to={`/user/login`}>Login</Link>
-			<Link to={`/user/register`}>Register</Link>
-		</>
+		<section className="section section-container">
+			<span className="button-group">
+				<Link to={`/user/login`} className="button">Login</Link>
+				<Link to={`/user/register`} className="button">Register</Link>
+			</span>
+		</section>
 	)
 };
 

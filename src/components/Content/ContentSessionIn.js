@@ -5,9 +5,9 @@ import QuotesFeatured from "../Quote/QuoteFeatured";
 
 const ContentSessionIn = () => {
 	return (
-		<>
+		<section className="section section-container">
 			<QuotesFeatured />
-		</>
+		</section>
 	)
 };
 
