@@ -1,10 +1,14 @@
 import React from 'react';
 import { Container, Button, Link } from 'react-floating-action-button'
+import { useHistory } from "react-router-dom";
 
 const ActionsButton = () => {
 
+	let history = useHistory();
+
 	const handleLogOut = () => {
-		return localStorage.removeItem("token");
+		localStorage.removeItem("token");
+		history.push("/");
 	};
 
 	return (
