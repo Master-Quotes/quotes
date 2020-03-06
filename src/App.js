@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
 
 // IMPORT ASSETS
 // import './css/App.css'
+// import './assets/coreui/css/all.min.css'
 
 // IMPORT UTILITIES
 import ProtectedRoute                                   from "./utilities/ProtectedRoute"
@@ -57,7 +58,7 @@ function App() {
 
                 </main>
                 {/*<Footer />*/}
-                <Actions />
+                {session ? (<Actions />) : (" ")}
               </div>
             </QuoteContext.Provider>
           </SessionContext.Provider>
