@@ -20,6 +20,7 @@ import Quote                                            from "./components/Quote
 // IMPORT APP COMPONENTS
 import Header                                           from "./components/Layout/Header";
 import Footer                                           from "./components/Layout/Footer";
+import Actions                                          from "./components/Actions/Actions";
 import Content                                          from "./components/Content/Content";
 import UserAuth                                         from "./components/User/UserAuth";
 import QuotesList                                       from "./components/Quote/QuoteList";
@@ -53,8 +54,10 @@ function App() {
                   />
                   <ProtectedRoute exact path="/quotes" component={QuotesList} />
                   <ProtectedRoute exact path="/quotes/add" component={QuoteAddForm} />
+
                 </main>
                 {/*<Footer />*/}
+                <Actions />
               </div>
             </QuoteContext.Provider>
           </SessionContext.Provider>
