@@ -42,19 +42,17 @@ function App() {
               <div className="App">
                 <Header />
                 <main id="main-content" className="main-content">
-                  <div className={!session ? ("container") : ("container")}>
-                    <Route exact path="/" component={Content} />
-                    <Route
-                      path="/user/login"
-                      render={ props => <UserAuth{...props} role="login" />}
-                    />
-                    <Route
-                      path="/user/register"
-                      render={ props => <UserAuth{...props} role="register" />}
-                    />
-                    <ProtectedRoute exact path="/quotes" component={QuotesList} />
-                    <ProtectedRoute exact path="/quotes/add" component={QuoteAddForm} />
-                  </div>
+                  <Route exact path="/" component={Content} />
+                  <Route
+                    path="/user/login"
+                    render={ props => <UserAuth{...props} role="login" />}
+                  />
+                  <Route
+                    path="/user/register"
+                    render={ props => <UserAuth{...props} role="register" />}
+                  />
+                  <ProtectedRoute exact path="/quotes" component={QuotesList} />
+                  <ProtectedRoute exact path="/quotes/add" component={QuoteAddForm} />
                 </main>
                 {/*<Footer />*/}
               </div>
