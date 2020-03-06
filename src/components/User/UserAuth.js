@@ -40,38 +40,40 @@ const UserAuth = ({role}) => {
 	};
 
 	return(
-		<div className="form-container">
-			<div className="form-header">
-				<h1>Please, {role}</h1>
+		<section className="section section-container container">
+			<div className="form-container">
+				<div className="form-header">
+					<h1>Please, {role}</h1>
+				</div>
+				<form onSubmit={handleSubmit}>
+					<label>
+						Username:
+						<input
+							type="text"
+							name="username"
+							onChange={handleChange}
+							value={login.username}
+							required
+						/>
+					</label>
+					<label>
+						Password:
+						<input
+							type="password"
+							name="password"
+							value={login.password}
+							onChange={handleChange}
+							required
+						/>
+					</label>
+					<input
+						type="submit"
+						value="Submit"
+						className="button"
+					/>
+				</form>
 			</div>
-			<form onSubmit={handleSubmit}>
-				<label>
-					Username:
-					<input
-						type="text"
-						name="username"
-						onChange={handleChange}
-						value={login.username}
-						required
-					/>
-				</label>
-				<label>
-					Password:
-					<input
-						type="password"
-						name="password"
-						value={login.password}
-						onChange={handleChange}
-						required
-					/>
-				</label>
-				<input
-					type="submit"
-					value="Submit"
-					className="button"
-				/>
-			</form>
-		</div>
+		</section>
 	)
 };
 
