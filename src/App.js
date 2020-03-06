@@ -56,7 +56,7 @@ function App() {
                     <ProtectedRoute exact path="/quotes/add" component={QuoteAddForm} />
                   </div>
                 </main>
-                <Footer />
+                {/*<Footer />*/}
               </div>
             </QuoteContext.Provider>
           </SessionContext.Provider>
