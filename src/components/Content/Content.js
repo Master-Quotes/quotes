@@ -11,6 +11,7 @@ const Content = () => {
 
 	const { session } = useContext(SessionContext);
 	console.log("Seesion true?: ", session);
+
 	return (
 		<>
 			{!session ? (
