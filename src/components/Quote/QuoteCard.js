@@ -5,6 +5,8 @@ const QuoteCard = () => {
 		<article className="card-quote">
 			<div className="card-body">
 				"(Quote & Speaker)"
+				<h3>{props.speaker}</h3>
+				<p>{props.quote}</p>
 			</div>
 		</article>
 	)
