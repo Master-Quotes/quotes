@@ -26,7 +26,7 @@ const ActionsButton = () => {
 					<Link
 						href="/"
 						tooltip="Leave Mo'Quotes app"
-						icon="cil-account-logout"
+						icon="cis-account-logout"
 						onClick={handleOnClick}
 					/>
 				</>
