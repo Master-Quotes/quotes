@@ -55,7 +55,6 @@ function App() {
                   />
                   <ProtectedRoute exact path="/quotes" component={QuotesList} />
                   <ProtectedRoute exact path="/quotes/add" component={QuoteAddForm} />
-
                 </main>
                 {/*<Footer />*/}
                 {session ? (<Actions />) : (" ")}
