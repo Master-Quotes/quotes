@@ -56,8 +56,8 @@ function App() {
                     render={ props => <UserAuth {...props} role="register" />}
                   />
                   <ProtectedRoute exact path="/user" component={UserDashboard} />
-                  <Route exact path="/quotes" component={QuoteList} />
-                  {/*<ProtectedRoute exact path="/quotes/add" component={QuoteAddForm} />*/}
+                  <ProtectedRoute exact path="/quotes" component={QuoteList} />
+                  <ProtectedRoute exact path="/quotes/add" component={QuoteAddForm} />
                 </main>
                 {/*<Footer />*/}
                 {session ? (<Actions />) : (" ")}
