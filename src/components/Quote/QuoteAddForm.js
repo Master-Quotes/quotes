@@ -26,9 +26,28 @@ const QuoteAddForm = () => {
 
 	const [ newQuote, setNewQuote ] = useState(Quote);
 
+	const handleChanges = event => {
+		setNote({ ...quote, [event.target.name]: event.target.value });
+	}
+
+	const addQuote = event => {
+		console.log("submitting");
+		event.preventDefault();
+		setNewQuote(quote);
+		newQuote({quote: ''});
+	};
+
 	return (
 			<div>
-
+				<form onSubmit={addQuote}>
+					<label>Quote</label>
+					<textarea
+						id={quote.id}
+						name="quote-text"
+						value={quote.title}
+						onChange={handleChanges}
+					/>
+				</form>
 			</div>
 	)
 };
