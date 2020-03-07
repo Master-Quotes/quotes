@@ -21,7 +21,7 @@ const UserAuth = ({role}) => {
 	const handleSubmit = event => {
 		event.preventDefault();
 		axiosWithAuth()
-			.post(`https://quotes-db-mike.herokuapp.com/auth/${role}`, login)
+			.post(`/auth/${role}`, login)
 			.then(response => {
 				console.log('response: ', response);
 				localStorage.setItem("token", response.data.token);
