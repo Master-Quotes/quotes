@@ -1,16 +1,13 @@
 import React from "react";
 
-const QuoteCard = () => {
+const QuoteCard = ({quote, speaker}) => {
 	return (
 		<article className="card-quote">
 			<div className="card-body">
-				"(Quote & Speaker)"
-				<h3>{props.speaker}</h3>
-				<p>{props.quote}</p>
-				"(Quote)"
+				<p>{quote}</p>
 			</div>
 			<div className="card-footer">
-				"(Speaker)"
+				<h3>{speaker}</h3>
 			</div>
 		</article>
 	)

@@ -1,25 +1,36 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Container, Button, Link } from 'react-floating-action-button'
 import { useHistory } from "react-router-dom";
+import SessionContext from "../../context/SessionContext";
 
 const ActionsButton = () => {
 
-	let history = useHistory();
-	console.log("History: ", history.location.pathname);
+	const { session, setSession } = useContext(SessionContext);
+	console.log("Seesion true?: ", session);
 
-	// const handleLogOut = (e) => {
-	// 	 localStorage.removeItem("token");
-	// };
-	// console.log("Working: ", handleLogOut());
+	let history = useHistory();
+	// console.log("History: ", history.location.pathname);
+
+	const handleOnClick = () => {
+		// localStorage.removeItem("token");
+		setSession(false);
+	};
 
 	return (
 		<Container>
-			{/*<Link*/}
-			{/*	href="/"*/}
-			{/*  tooltip="Leave Mo'Quotes app"*/}
-			{/*  icon="cil-account-logout"*/}
-			{/*	// onClick={(handleLogOut())}*/}
-			{/*/>*/}
+
+			{!session ? (
+				<></>
+			) : (
+				<>
+					<Link
+						href="/"
+						tooltip="Leave Mo'Quotes app"
+						icon="cil-account-logout"
+						onClick={handleOnClick}
+					/>
+				</>
+			)}
 			<Link
 				href="#"
 			  tooltip="Create Mo'Quote"
@@ -36,7 +47,7 @@ const ActionsButton = () => {
 					tooltip="Go Home"
 					icon="cis-house"
 				/>
-			) : (" ")}
+			) : (<></>)}
 			<Button
 				className="fab-item action action-link is-large text-white"
 				icon="cis-plus"
