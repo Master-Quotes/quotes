@@ -9,8 +9,8 @@ import ActionsMenu from "./ActionsMenu";
 
 const Actions = () => {
 
-	const { session } = useContext(SessionContext);
-	console.log("Seesion true?: ", session);
+	// const { session } = useContext(SessionContext);
+	// console.log("Seesion true?: ", session);
 
 	return (
 		<>
