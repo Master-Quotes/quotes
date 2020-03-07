@@ -27,14 +27,14 @@ const QuoteAddForm = () => {
 	const [ newQuote, setNewQuote ] = useState(Quote);
 
 	const handleChanges = event => {
-		setNote({ ...quote, [event.target.name]: event.target.value });
+		setQuote({ ...quote, [event.target.name]: event.target.value });
 	}
 
 	const addQuote = event => {
 		console.log("submitting");
 		event.preventDefault();
 		setNewQuote(quote);
-		newQuote({quote: ''});
+		// newQuote({quote: ''});
 	};
 
 	return (

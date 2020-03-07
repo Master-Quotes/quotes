@@ -1,31 +1,34 @@
 import React, { useEffect, useContext } from "react";
 import axios from 'axios';
 
-// IMPORT APP COMPONENTS
-import QuoteCard from "./QuoteCard";
+// IMPORT UTILITIES
+import {axiosWithAuth} from "../../utilities/axiosWithAuth";
 
 // IMPORT CONTEXTS
 import QuoteContext from "../../context/QuoteContext";
 
+// IMPORT APP COMPONENTS
+import QuoteCard from "./QuoteCard";
+
 const QuotesList = () => {
 
-	const { quote, setQuote } = useContext(QuoteContext);
+	const { quote, setQuote, quotes, setQuotes } = useContext(QuoteContext);
+	console.log("quote: ", quotes);
 
 	useEffect(() => {
-			axios
+			axiosWithAuth()
 				.get('https://quotes-db-mike.herokuapp.com/quotes/')
 				.then(response => {
-					setQuote(response.quote);
-					console.log("response", response.quote);
+					console.log("response", response.data);
+					setQuotes(response.data);
 				})
 				.catch(error => console.log('error', error));
 		}, []);
 
 	return (
-		<section className="cards-quotes">
-			"(Quotes go here)"
-			{quote.map(quotes => {
-					return <QuoteCard quotes={quotes} key={quotes.id} />
+		<section className="section section-quotes quotes-cards container is-grid">
+			{quotes.map(item => {
+					return <QuoteCard quote={item.quote} speaker={item.speaker} key={item.id} />
 				})
 			}
 		</section>

@@ -34,13 +34,14 @@ function App() {
   const [session, setSession]                           = useState(!!localStorage.getItem("token"));
   const [login, setLogin]                               = useState(User);
   const [quote, setQuote]                               = useState(Quote);
+  const [quotes, setQuotes]                             = useState([]);
 
   return (
     <Router>
       {/*<GlobalContext.Provider value={{history}}>*/}
         <UserContext.Provider value={{ login, setLogin }}>
           <SessionContext.Provider value={{ session, setSession }}>
-            <QuoteContext.Provider value={{ quote, setQuote }}>
+            <QuoteContext.Provider value={{ quote, setQuote, quotes, setQuotes }}>
               <div className="App">
                 <Header />
                 <main id="main-content" className="main-content">
