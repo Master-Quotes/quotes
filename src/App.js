@@ -25,7 +25,7 @@ import Actions                                          from "./components/Actio
 import Content                                          from "./components/Content/Content";
 import UserAuth                                         from "./components/User/UserAuth";
 import UserDashboard                                    from "./components/User/UserDashboard";
-import QuotesList                                       from "./components/Quote/QuoteList";
+import QuoteList                                        from "./components/Quote/QuoteList";
 import QuoteAddForm                                     from "./components/Quote/QuoteAddForm";
 
 function App() {
@@ -49,15 +49,15 @@ function App() {
                   <Route exact path="/" component={Content} />
                   <Route
                     path="/user/login"
-                    render={ props => <UserAuth{...props} role="login" />}
+                    render={ props => <UserAuth {...props} role="login" />}
                   />
                   <Route
                     path="/user/register"
-                    render={ props => <UserAuth{...props} role="register" />}
+                    render={ props => <UserAuth {...props} role="register" />}
                   />
                   <ProtectedRoute exact path="/user" component={UserDashboard} />
-                  <ProtectedRoute exact path="/quotes" component={QuotesList} />
-                  <ProtectedRoute path="/quotes/add" component={QuoteAddForm} />
+                  <ProtectedRoute exact path="/quotes" component={QuoteList} />
+                  {/*<ProtectedRoute exact path="/quotes/add" component={QuoteAddForm} />*/}
                 </main>
                 {/*<Footer />*/}
                 {session ? (<Actions />) : (" ")}

@@ -37,7 +37,7 @@ const ActionsButton = () => {
 			  icon="cis-pencil"
 			/>
 			<Link
-				href="/quotes"
+				href="quotes"
 			  tooltip="A List of Mo'Quotes"
 			  icon="cis-list"
 			/>
