@@ -20,35 +20,60 @@ const QuoteAddForm = () => {
 
 	let history = useHistory();
 
-	// const { history } = useContext(GlobalContext);
 	const { setSession } = useContext(SessionContext);
 	const { quote, setQuote } = useContext(QuoteContext);
+	console.log("What's the quote? ", quote);
 
 	const [ newQuote, setNewQuote ] = useState(Quote);
 
 	const handleChanges = event => {
 		setQuote({ ...quote, [event.target.name]: event.target.value });
-	}
+	};
 
 	const addQuote = event => {
-		console.log("submitting");
 		event.preventDefault();
-		setNewQuote(quote);
-		// newQuote({quote: ''});
+		setQuote({...quote});
+		axiosWithAuth()
+			.put('/quotes/', quote)
+			.then( response => {
+				console.log("Quote: Added: ", response);
+				setQuote(quote);
+				history.push("/quotes")
+			})
+			.catch(error => {
+				console.log("Nope, it didn't take: ", error);
+			})
 	};
 
 	return (
-			<div>
+		<section className="section section-container container">
+			<div className="form-container">
 				<form onSubmit={addQuote}>
-					<label>Quote</label>
-					<textarea
-						id={quote.id}
-						name="quote-text"
-						value={quote.title}
-						onChange={handleChanges}
-					/>
+					<label>Quote
+						<textarea
+							id="quote"
+							name="quote"
+							value={quote.quote}
+							onChange={handleChanges}
+							className="form-quote"
+						/>
+					</label>
+					<label>Speaker
+						<input
+							name="speaker"
+							type="text"
+							value={quote.speaker}
+						/>
+					</label>
+					<div className="button-group form">
+						<button>
+							Add Mo'Quote
+						</button>
+						<a href="/quotes" className="outline">Cancel</a>
+					</div>
 				</form>
 			</div>
+		</section>
 	)
 };
 
