@@ -25,25 +25,32 @@ const ActionsButton = () => {
 				<>
 					<Link
 						href="/"
+						to="/"
 						tooltip="Leave Mo'Quotes app"
-						icon="cil-account-logout"
+						icon="cis-account-logout"
 						onClick={handleOnClick}
 					/>
 				</>
 			)}
 			<Link
-				href="#"
+				href="/quotes/add"
+				to="/quotes/add"
 			  tooltip="Create Mo'Quote"
 			  icon="cis-pencil"
 			/>
-			<Link
-				href="quotes"
-			  tooltip="A List of Mo'Quotes"
-			  icon="cis-list"
-			/>
+
+			{history.location.pathname !== "/quotes" ? (
+				<Link
+					href="/quotes"
+					to="/quotes"
+					tooltip="A List of Mo'Quotes"
+					icon="cis-list"
+				/>
+			) : (<></>)}
 			{history.location.pathname !== "/" ? (
 				<Link
 					href="/"
+					to="/"
 					tooltip="Go Home"
 					icon="cis-house"
 				/>

@@ -57,7 +57,7 @@ function App() {
                   />
                   <ProtectedRoute exact path="/user" component={UserDashboard} />
                   <ProtectedRoute exact path="/quotes" component={QuoteList} />
-                  {/*<ProtectedRoute exact path="/quotes/add" component={QuoteAddForm} />*/}
+                  <ProtectedRoute exact path="/quotes/add" component={QuoteAddForm} />
                 </main>
                 {/*<Footer />*/}
                 {session ? (<Actions />) : (" ")}
