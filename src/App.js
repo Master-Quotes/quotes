@@ -24,6 +24,7 @@ import Footer                                           from "./components/Layou
 import Actions                                          from "./components/Actions/Actions";
 import Content                                          from "./components/Content/Content";
 import UserAuth                                         from "./components/User/UserAuth";
+import UserDashboard                                    from "./components/User/UserDashboard";
 import QuotesList                                       from "./components/Quote/QuoteList";
 import QuoteAddForm                                     from "./components/Quote/QuoteAddForm";
 
@@ -54,8 +55,9 @@ function App() {
                     path="/user/register"
                     render={ props => <UserAuth{...props} role="register" />}
                   />
+                  <ProtectedRoute exact path="/user" component={UserDashboard} />
                   <ProtectedRoute exact path="/quotes" component={QuotesList} />
-                  <ProtectedRoute exact path="/quotes/add" component={QuoteAddForm} />
+                  <ProtectedRoute path="/quotes/add" component={QuoteAddForm} />
                 </main>
                 {/*<Footer />*/}
                 {session ? (<Actions />) : (" ")}
