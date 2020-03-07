@@ -13,7 +13,6 @@ const UserAuth = ({role}) => {
 
 	let history = useHistory();
 
-	// const { history } = useContext(GlobalContext);
 	const { login, setLogin } = useContext(UserContext);
 	const { setSession } = useContext(SessionContext);
 
