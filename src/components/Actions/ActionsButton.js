@@ -25,6 +25,7 @@ const ActionsButton = () => {
 				<>
 					<Link
 						href="/"
+						to="/"
 						tooltip="Leave Mo'Quotes app"
 						icon="cis-account-logout"
 						onClick={handleOnClick}
@@ -32,18 +33,21 @@ const ActionsButton = () => {
 				</>
 			)}
 			<Link
-				href="#"
+				href="/quotes/add"
+				to="/quotes/add"
 			  tooltip="Create Mo'Quote"
 			  icon="cis-pencil"
 			/>
 			<Link
-				href="quotes"
+				href="/quotes"
+				to="/quotes"
 			  tooltip="A List of Mo'Quotes"
 			  icon="cis-list"
 			/>
 			{history.location.pathname !== "/" ? (
 				<Link
 					href="/"
+					to="/"
 					tooltip="Go Home"
 					icon="cis-house"
 				/>

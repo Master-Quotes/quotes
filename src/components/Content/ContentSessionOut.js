@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ContentSessionOut = () => {
 	return (
-		<section className="section section-login login-container is-flex-centered is-full-height">
+		<section className="section section-login login-container container">
 			<div className="login-body">
 				<ul>
 					<li>Are you a member?</li>
