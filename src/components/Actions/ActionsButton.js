@@ -7,26 +7,26 @@ const ActionsButton = () => {
 	let history = useHistory();
 
 	const handleLogOut = () => {
-		localStorage.removeItem("token");
-		history.push("/");
+		return localStorage.removeItem("token");
 	};
+	// console.log("Working: ", handleLogOut());
 
 	return (
 		<Container>
 			<Link
-				href="#"
-			  tooltip="Log out of Mo'Quotes"
+				href="/"
+			  tooltip="Leave Mo'Quotes app"
 			  icon="cil-account-logout"
-				onClick={() => handleLogOut}
+				onClick={(handleLogOut())}
 			/>
 			<Link
 				href="#"
-			  tooltip="Create a Quote"
+			  tooltip="Create Mo'Quote"
 			  icon="cis-pencil"
 			/>
 			<Link
 				href="#"
-			  tooltip="Lists of Quotes"
+			  tooltip="A List of Mo'Quotes"
 			  icon="cis-list"
 			/>
 			<Button
