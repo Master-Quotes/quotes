@@ -4,7 +4,10 @@ const QuoteCard = () => {
 	return (
 		<article className="card-quote">
 			<div className="card-body">
-				"(Quote & Speaker)"
+				"(Quote)"
+			</div>
+			<div className="card-footer">
+				"(Speaker)"
 			</div>
 		</article>
 	)
