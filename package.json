@@ -7,6 +7,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "pusher-js": "^5.1.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-floating-action-button": "^1.0.5",
@@ -46,5 +47,18 @@
     "nib": "^1.1.2",
     "rupture": "^0.7.1",
     "stylus": "^0.54.7"
-  }
+  },
+  "description": "[https://quotes-db-mike.herokuapp.com/](https://quotes-db-mike.herokuapp.com/)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Master-Quotes/quotes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Master-Quotes/quotes/issues"
+  },
+  "homepage": "."
 }
