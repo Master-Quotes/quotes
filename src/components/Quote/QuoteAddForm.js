@@ -52,7 +52,7 @@ const QuoteAddForm = () => {
 			<div className="form-header">
 				<h1>Add your Quote</h1>
 			</div>
-			<form onSubmit={addQuote}>
+			<form onSubmit={addQuote} className="modal-form">
 				<label>Speaker
 					<input
 						name="speaker"
