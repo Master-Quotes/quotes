@@ -9,7 +9,7 @@ import './assets/coreui/css/all.min.css'
 import ProtectedRoute                                   from "./utilities/ProtectedRoute"
 
 // IMPORT CONTEXTS
-// import GlobalContext                                    from "./context/GlobalContext";
+import GlobalContext                                    from "./context/GlobalContext";
 import UserContext                                      from "./context/UserContext";
 import SessionContext                                   from "./context/SessionContext";
 import QuoteContext                                     from "./context/QuoteContext";
@@ -32,14 +32,15 @@ function App() {
 
   // let history                                           = useHistory();
 
-  const [session, setSession]                           = useState(!!localStorage.getItem("token"));
+  const [itemToggle, setItemToggle]                     = useState(0);
   const [login, setLogin]                               = useState(User);
+  const [session, setSession]                           = useState(!!localStorage.getItem("token"));
   const [quote, setQuote]                               = useState(Quote);
   const [quotes, setQuotes]                             = useState([]);
 
   return (
     <Router>
-      {/*<GlobalContext.Provider value={{history}}>*/}
+      <GlobalContext.Provider value={{itemToggle, setItemToggle}}>
         <UserContext.Provider value={{ login, setLogin }}>
           <SessionContext.Provider value={{ session, setSession }}>
             <QuoteContext.Provider value={{ quote, setQuote, quotes, setQuotes }}>
@@ -65,7 +66,7 @@ function App() {
             </QuoteContext.Provider>
           </SessionContext.Provider>
         </UserContext.Provider>
-      {/*</GlobalContext.Provider>*/}
+      </GlobalContext.Provider>
     </Router>
   );
 }

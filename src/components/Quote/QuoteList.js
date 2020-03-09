@@ -22,7 +22,7 @@ const QuoteList = () => {
 				console.log("Response: ", response.data);
 				setQuotes(response.data);
 			})
-			.catch(error => console.log('Error: ', error));
+			.catch(error => console.log("That's an error! " ,error))
 	};
 
 	useEffect(() => {
@@ -45,7 +45,7 @@ const QuoteList = () => {
 
 	return (
 		<section className="section section-quotes quotes-cards container is-grid">
-			{quotesMap.map(item => {
+			{quotes.sort((a,b) => b.id-a.id ).map(item => {
 					return <QuoteCard {...item} key={item.id} />
 				})
 			}

@@ -37,7 +37,7 @@ const ActionsButton = () => {
 					href="/quotes/add"
 					to="/quotes/add"
 					tooltip="Create Mo'Quotes"
-					icon="cis-pencil"
+					icon="cis-plus-circle"
 				/>
 			) : (<></>)}
 			{history.location.pathname !== "/quotes" ? (
