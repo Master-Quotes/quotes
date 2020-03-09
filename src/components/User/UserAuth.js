@@ -32,6 +32,7 @@ const UserAuth = ({role}) => {
 			.then(response => {
 				console.log('response: ', response);
 				localStorage.setItem("token", response.data.token);
+				localStorage.setItem("username", login.username);
 				setSession(true);
 				history.push("/");
 				setLogin(User);
