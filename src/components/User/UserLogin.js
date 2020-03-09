@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useMemo } from 'react';
 import { useHistory } from "react-router-dom";
 // import axios from 'axios';
 
@@ -18,6 +18,9 @@ const UserLogin = () => {
 	// const { history } = useContext(GlobalContext);
 	const { login, setLogin } = useContext(UserContext);
 	const { session, setSession } = useContext(SessionContext);
+
+	// MEMOIZE STATE
+	const userValue = useMemo(() => ({ login, setLogin }), [login, setLogin]);
 
 	console.log("User: ", login);
 

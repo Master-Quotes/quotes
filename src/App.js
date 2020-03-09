@@ -1,4 +1,4 @@
-import React, { useState }                            from "react";
+import React, { useState, useMemo  }                            from "react";
 import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
 import Modal                                          from "react-modal"
 
@@ -33,6 +33,7 @@ function App() {
 
   // let history                                           = useHistory();
 
+  // DEFINE STATES
   const [itemToggle, setItemToggle]                     = useState(0);
   const [modal, setModal]                               = useState(false);
   const [login, setLogin]                               = useState(User);
