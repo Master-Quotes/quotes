@@ -61,7 +61,7 @@ function App() {
                   <ProtectedRoute path="/quotes/add" component={QuoteAddForm} />
                 </main>
                 {/*<Footer />*/}
-                {session ? (<Actions />) : (" ")}
+                {session ? (<Actions />) : (<></>)}
               </div>
             </QuoteContext.Provider>
           </SessionContext.Provider>
