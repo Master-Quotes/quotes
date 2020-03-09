@@ -4,17 +4,22 @@ div
 		bottom 4vh
 		right 4vw
 		button
-			&.action
-				height 66px
-				width 66px
 			&.fab-rotate
 				&:active,
 				&:focus,
 				&:hover
 					border-radius 50%
+			&.action-fab
+				background-color tertiary !important
+				height 66px
+				width 66px
+			&.link-home,
+			&.link-add,
+			&.link-quotes
+				background-color success !important
 		&:hover
 			button
 				&.fab-item
 					&:not(:last-child)
-						height 50px
-						width 50px
+						height 55px
+						width 55px

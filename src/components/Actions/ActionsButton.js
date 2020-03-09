@@ -28,6 +28,7 @@ const ActionsButton = () => {
 			) : (
 				<>
 					<Button
+						className="item-action action-link link-exit"
 						tooltip="Leave Mo'Quotes app"
 						icon="cis-account-logout"
 						onClick={() => handleOnClick()}
@@ -36,6 +37,7 @@ const ActionsButton = () => {
 			)}
 			{history.location.pathname !== "/quotes/add" ? (
 				<Button
+					className="item-action action-link link-add"
 					tooltip="Create Mo'Quotes"
 					icon="cis-plus-circle"
 					onClick={() => {setModal(true)}}
@@ -43,6 +45,7 @@ const ActionsButton = () => {
 			) : (<></>)}
 			{history.location.pathname !== "/quotes" ? (
 				<Button
+					className="item-action action-link link-quotes"
 					tooltip="A List of Mo'Quotes"
 					icon="cis-list"
 					onClick={() => history.push("/quotes")}
@@ -50,13 +53,14 @@ const ActionsButton = () => {
 			) : (<></>)}
 			{history.location.pathname !== "/" ? (
 				<Button
+					className="item-action action-link link-home"
 					tooltip="Go Home"
 					icon="cis-house"
 					onClick={() => history.push("/")}
 				/>
 			) : (<></>)}
 			<Button
-				className="fab-item action action-link is-large text-white"
+				className="fab-item item-action action-fab is-large text-white"
 				icon="cis-plus"
 				rotate={true}
 				// onClick={() => alert('FAB Rocks!')}
