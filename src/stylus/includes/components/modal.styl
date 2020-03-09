@@ -1,0 +1,16 @@
+body
+	&.ReactModal__Body--open
+		.ReactModalPortal
+			z-index 999
+			.ReactModal__Overlay
+				background-color rgba(0,0,0,0.25) !important
+				display flex
+				flex-direction column
+				justify-content center
+				align-items center
+				.ReactModal__Content
+					top auto !important
+					bottom auto !important
+					.form-container
+						form
+							padding 0
