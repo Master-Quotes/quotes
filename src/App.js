@@ -29,6 +29,8 @@ import UserDashboard                                    from "./components/User/
 import QuoteList                                        from "./components/Quote/QuoteList";
 import QuoteAddForm                                     from "./components/Quote/QuoteAddForm";
 
+Modal.setAppElement('#root');
+
 function App() {
 
   // let history                                           = useHistory();
