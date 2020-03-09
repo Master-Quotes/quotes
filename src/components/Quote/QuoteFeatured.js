@@ -6,7 +6,7 @@ const QuoteFeatured = () => {
 			<div className="card-header" />
 			<div className="card-body">
 				<p style={{textAlign: "center"}}>
-					"Here be future featured, Aaargh!"
+					"Here do be da featured Quote, Aaargh!"
 				</p>
 			</div>
 			<div className="card-footer" />
