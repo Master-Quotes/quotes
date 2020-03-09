@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // IMPORT UTILITIES
 import { axiosWithAuth } from "../../utilities/axiosWithAuth";
@@ -75,7 +76,8 @@ const QuoteAddForm = () => {
 						<button>
 							Add Mo'Quote
 						</button>
-						<a href="/quotes" className="outline">Cancel</a>
+						{/*<a href="/quotes" className="outline">Cancel</a>*/}
+						<Link to="/quotes" className="outline">Cancel</Link>
 					</div>
 				</form>
 			</div>
