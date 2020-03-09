@@ -16,7 +16,7 @@ const ActionsButton = () => {
 	// console.log("History: ", history.location.pathname);
 
 	const handleOnClick = () => {
-		// localStorage.removeItem("token");
+		localStorage.removeItem("token");
 		setSession(false);
 	};
 
@@ -30,7 +30,7 @@ const ActionsButton = () => {
 					<Button
 						tooltip="Leave Mo'Quotes app"
 						icon="cis-account-logout"
-						onClick={handleOnClick}
+						onClick={() => handleOnClick()}
 					/>
 				</>
 			)}

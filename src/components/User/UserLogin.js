@@ -18,9 +18,10 @@ const UserLogin = () => {
 	// const { history } = useContext(GlobalContext);
 	const { login, setLogin } = useContext(UserContext);
 	const { session, setSession } = useContext(SessionContext);
+	console.log("Still logged in? ", session);
 
 	// MEMOIZE STATE
-	const userValue = useMemo(() => ({ login, setLogin }), [login, setLogin]);
+	// const userValue = useMemo(() => ({ login, setLogin }), [login, setLogin]);
 
 	console.log("User: ", login);
 

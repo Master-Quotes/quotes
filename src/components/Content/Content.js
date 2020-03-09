@@ -10,7 +10,7 @@ import ContentSessionIn from "./ContentSessionIn";
 const Content = () => {
 
 	const { session } = useContext(SessionContext);
-	// console.log("Seesion true?: ", session);
+	console.log("Seesion true?: ", session);
 
 	return (
 		<>

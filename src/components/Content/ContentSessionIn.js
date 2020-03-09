@@ -12,10 +12,11 @@ const ContentSessionIn = () => {
 
 	// MEMOIZE STATE
 	const userValue = useMemo(() => ({ login, setLogin }), [login, setLogin]);
+	console.log("Memoizing? ", userValue );
 
 	return (
 		<section className="section section-home home-container container">
-			<div className="home-title">
+			<div className="home-header header">
 				<h2>Hi, {login.username}!</h2>
 			</div>
 			<QuotesFeatured />

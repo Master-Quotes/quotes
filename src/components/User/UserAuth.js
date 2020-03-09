@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { useHistory } from "react-router-dom";
 
 // IMPORT UTILITIES
@@ -14,9 +14,13 @@ const UserAuth = ({role}) => {
 	let history = useHistory();
 
 	const { login, setLogin } = useContext(UserContext);
-	const { setSession } = useContext(SessionContext);
-
+	const { session, setSession } = useContext(SessionContext);
+	console.log("Still logged in? ", session);
 	console.log("User: ", login);
+
+	// MEMOIZE STATE
+	const userValue = useMemo(() => ({ login, setLogin }), [login, setLogin]);
+	console.log("Memoizing? ", userValue );
 
 	const handleSubmit = event => {
 		event.preventDefault();
@@ -41,8 +45,8 @@ const UserAuth = ({role}) => {
 	return(
 		<section className="section section-container container">
 			<div className="form-container">
-				<div className="form-header">
-					<h1>Please, {role}</h1>
+				<div className="form-header header">
+					<h2>Please, {role}</h2>
 				</div>
 				<form onSubmit={handleSubmit}>
 					<label>
