@@ -42,6 +42,10 @@ const QuoteCard = (props) => {
 		}
 	};
 
+	const featureQuote = () => {
+
+	};
+
 	const deleteQuote = () => {
 		axiosWithAuth()
 			.delete(`https://quotes-db-mike.herokuapp.com/quotes/${props.id}`)

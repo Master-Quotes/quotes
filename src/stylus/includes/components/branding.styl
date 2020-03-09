@@ -2,10 +2,27 @@
 	&.branding
 		box-sizing border-box
 		padding 1rem 0
+		display flex
+		justify-content center
+		align-items center
+		line-height normal
+		position relative
 		span
-			h1
+			&.brand-logo
 				display block
-				margin 0
-				font-family freight-text-pro, serif
-				font-size 2.5rem
-				font-weight bold
+				position relative
+				height 46px
+				width auto
+				margin-right 14px
+				img
+					&.logo-image
+						display block
+						width auto
+						height 100%
+			&.brand-title
+				h1
+					display block
+					margin 0
+					font-family freight-text-pro, serif
+					font-size 2.5rem
+					font-weight bold
