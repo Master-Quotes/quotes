@@ -7,14 +7,8 @@ const ContentSessionOut = () => {
 			<div className="login-body">
 				<ul>
 					<li>Are you a member?</li>
-					<li>If not, register below!</li>
+					<li>If not, register below.</li>
 				</ul>
-				{/*<p>*/}
-				{/*	Are you a member?*/}
-				{/*</p>*/}
-				{/*<p>*/}
-				{/*	If not, register below!*/}
-				{/*</p>*/}
 			</div>
 			<span className="button-group">
 				<Link to={`/user/login`} className="button">Login</Link>
