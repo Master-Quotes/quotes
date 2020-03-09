@@ -42,18 +42,24 @@ const QuoteAddForm = () => {
 				setQuote(quote);
 				history.push("/quotes");
 				setModal(false);
+				setQuote(Quote);
 			})
 			.catch(error => {
 				console.log("Nope, it didn't take: ", error);
-			})
+			});
 	};
+
+	console.log("Empty Quote? ", Quote);
 
 	return (
 		<div className="form-container">
 			<div className="form-header header">
 				<h2>Add your Quote</h2>
 			</div>
-			<form onSubmit={addQuote} className="modal-form">
+			<form
+				onSubmit={addQuote}
+				className="modal-form"
+			>
 				<label>Speaker
 					<input
 						name="speaker"

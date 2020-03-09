@@ -9,6 +9,9 @@ import { axiosWithAuth } from "../../utilities/axiosWithAuth";
 import UserContext from "../../context/UserContext";
 import SessionContext from "../../context/SessionContext";
 
+// IMPORT INITIAL STATES
+import User from "./User";
+
 const UserAuth = ({role}) => {
 
 	let history = useHistory();
@@ -31,6 +34,7 @@ const UserAuth = ({role}) => {
 				localStorage.setItem("token", response.data.token);
 				setSession(true);
 				history.push("/");
+				setLogin(User);
 			})
 			.catch(error => console.log('error: ', error));
 	};

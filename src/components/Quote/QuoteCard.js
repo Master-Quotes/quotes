@@ -111,6 +111,7 @@ const QuoteCard = (props) => {
 							</label>
 							<div className="button-group form">
 								<button
+									className="success"
 									onClick={item => editQuoteToggle(item)}
 								>Submit</button>
 								<Link
