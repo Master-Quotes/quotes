@@ -32,13 +32,14 @@ const ActionsButton = () => {
 					/>
 				</>
 			)}
-			<Link
-				href="/quotes/add"
-				to="/quotes/add"
-			  tooltip="Create Mo'Quote"
-			  icon="cis-pencil"
-			/>
-
+			{history.location.pathname !== "/quotes/add" ? (
+				<Link
+					href="/quotes/add"
+					to="/quotes/add"
+					tooltip="Create Mo'Quotes"
+					icon="cis-plus-circle"
+				/>
+			) : (<></>)}
 			{history.location.pathname !== "/quotes" ? (
 				<Link
 					href="/quotes"

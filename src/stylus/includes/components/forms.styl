@@ -1,4 +1,5 @@
-.form-container
+.form-container,
+.card-body
 	//border-radius 4px
 	//box-shadow 0 12.1px 10px rgba(0, 0, 0, 0.035), 0 97px 80px rgba(0, 0, 0, 0.07)
 	//overflow hidden
@@ -10,22 +11,28 @@
 			font-weight normal
 	form
 		background-color white
-		border-radius 4px
+		border-radius radius
 		box-shadow 0 12.1px 10px rgba(0, 0, 0, 0.035), 0 97px 80px rgba(0, 0, 0, 0.07)
 		overflow hidden
 		padding 2rem
 		//margin-bottom 2rem
+		&.card-form
+			border-radius 0
+			box-shadow 0
+			overflow hidden
+			padding 0
 		label
 			color black
 			display block
 			margin-bottom 0.8rem
 		input, button
-			border-color primary
+			//border-color default
 		textarea
-			border-color primary
+			//border-color primary
+		button,
 		.button
-			border-color primary
-			background-color primary
+			border-color default
+			background-color default
 			width 100%
 		&:nth-child
 			margin-bottom 1rem

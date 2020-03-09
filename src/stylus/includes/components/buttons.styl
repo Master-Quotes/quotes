@@ -1,26 +1,36 @@
 .button-group
-	display flex
-	align-items center
-	justify-content center
+	display grid
+	grid-template-columns repeat(auto-fit, minmax(50%, 1fr))
+	grid-gap 4px
 	//margin-top 2rem
 	&.no-margin
 		margin 0
 	&.form
 		margin-top 0
 		justify-content flex-start
+	button, a
+		box-sizing border-box
+		text-align center
+	button
+		width 100%
 	a
 		text-decoration none
 		color white
+		width 100%
 		&.outline
-			border 4px solid transparent
-			color red
+			border 4px solid error
+			border-radius 4px
+			background-color white
+			color error
 			font-size 1.25rem
-			margin-bottom 8px
 			padding .5rem
+			&:hover
+				border-color darken(error, 25%)
+				background-color darken(error, 25%)
 
 
 button, &.button
-	background-color primary
+	background-color shade
 	color white
 	&:hover
 		background-color #808080
@@ -28,8 +38,7 @@ button, &.button
 	&:focus
 		background-color green
 		border 4px solid green
-		border-radius 0
-		color #fff
+		//border-radius radius
 		outline 0
 	&.button-clear
 		&:focus

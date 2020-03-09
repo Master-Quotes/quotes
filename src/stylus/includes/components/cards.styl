@@ -1,23 +1,87 @@
-.cards-quotes
+.section-quotes
 	display grid
 	grid-template-columns repeat(2, 1fr)
 	gap 10px
 	a
 		text-decoration none
+	article
 		&.card-quote
 			background-color white
-			border-radius 4px
-			box-shadow 0 12.1px 10px rgba(0, 0, 0, 0.065), 0 97px 80px rgba(0, 0, 0, 0.07)
-			padding 1rem
+			//border-radius 4px
+			box-shadow 0 0 10px rgba(0,0,0,0.15), 0 100px 80px rgba(0,0,0,0.075), 0 40px 100px -50px rgba(170,170,170,0.5)
+			margin 5px
+			position relative
+			display flex
+			flex-direction column
+			justify-content space-between
+			//overflow hidden
 			.card-header
 				h2
 					margin-top 0
 					color black
 			.card-body
 				color black
+				padding 2rem
+				p
+					margin 0
 				.card-text
 					margin-top 1rem
 					span
 						display inline-block
 						font-weight bolder
 						width 18%
+			.card-footer
+				padding 2rem
+				h3
+					margin 0
+			.card-options
+				position absolute
+				width 128px
+				top -14px
+				right -10px
+				ul
+					list-style none
+					margin 0
+					padding 0
+					display grid
+					grid-template-columns repeat(auto-fit, minmax(40px, 1fr))
+					grid-gap 4px
+					li
+						button
+							&.card-option
+								border-radius 50%
+								//box-shadow 0 0 10px rgba(0,0,0,.15), 0 100px 80px rgba(0,0,0,.075), 0 0px 50px 0 hsla(0,0%,66.8%,.5)
+								width 40px
+								height 40px
+								font-size 1rem
+								position relative
+								&.option-edit
+									background-color shade
+									border-color shade
+								&.option-featured
+									background-color shade
+									border-color shade
+								&.option-delete
+									background-color error
+									border-color error
+		&.folded
+			position relative
+			//box-shadow 0 0 0 rgba(0,0,0,0.8)
+			&:after
+				content ""
+				position absolute
+				bottom 0
+				right 0
+				width 0
+				height 0
+				border-top 40px solid #eee
+				border-right 40px solid white
+			&:before
+				content ""
+				position absolute
+				bottom 0
+				right 0
+				width 0
+				height 0
+				border-bottom 69px solid transparent
+				border-left 69px solid transparent

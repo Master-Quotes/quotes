@@ -48,7 +48,18 @@ const QuoteAddForm = () => {
 	return (
 		<section className="section section-container container">
 			<div className="form-container">
+				<div className="form-header">
+					<h1>Add your Quote</h1>
+				</div>
 				<form onSubmit={addQuote}>
+					<label>Speaker
+						<input
+							name="speaker"
+							type="text"
+							value={quote.speaker}
+							onChange={handleChanges}
+						/>
+					</label>
 					<label>Quote
 						<textarea
 							id="quote"
@@ -56,13 +67,8 @@ const QuoteAddForm = () => {
 							value={quote.quote}
 							onChange={handleChanges}
 							className="form-quote"
-						/>
-					</label>
-					<label>Speaker
-						<input
-							name="speaker"
-							type="text"
-							value={quote.speaker}
+							rows="4"
+							cols="50"
 						/>
 					</label>
 					<div className="button-group form">
