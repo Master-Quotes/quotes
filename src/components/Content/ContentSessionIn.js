@@ -7,17 +7,17 @@ import UserContext from "../../context/UserContext";
 import QuotesFeatured from "../Quote/QuoteFeatured";
 
 const ContentSessionIn = () => {
-	const {login, setLogin } = useContext(UserContext);
+	const {login, setLogin, username } = useContext(UserContext);
 	console.log(login);
 
 	// MEMOIZE STATE
-	const userValue = useMemo(() => ({ login, setLogin }), [login, setLogin]);
+	const userValue = useMemo(() => ({ login, setLogin, username }), [login, setLogin, username]);
 	console.log("Memoizing? ", userValue );
 
 	return (
 		<section className="section section-home home-container container">
 			<div className="home-header header">
-				<h2>Hi, {login.username}!</h2>
+				<h2>Hi, {username}!</h2>
 			</div>
 			<QuotesFeatured />
 		</section>

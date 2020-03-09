@@ -43,10 +43,13 @@ function App() {
   const [quote, setQuote]                               = useState(Quote);
   const [quotes, setQuotes]                             = useState([]);
 
+  const username                                        = localStorage.getItem("username");
+  console.log("Username: ", username);
+
   return (
     <Router>
       <GlobalContext.Provider value={{itemToggle, setItemToggle, modal, setModal}}>
-        <UserContext.Provider value={{ login, setLogin }}>
+        <UserContext.Provider value={{ login, setLogin, username }}>
           <SessionContext.Provider value={{ session, setSession }}>
             <QuoteContext.Provider value={{ quote, setQuote, quotes, setQuotes }}>
               <div className="App">
