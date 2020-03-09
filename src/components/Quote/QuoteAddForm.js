@@ -36,11 +36,12 @@ const QuoteAddForm = () => {
 		event.preventDefault();
 		setQuote({...quote});
 		axiosWithAuth()
-			.put('/quotes/', quote)
+			.post('/quotes/', quote)
 			.then( response => {
 				console.log("Quote: Added: ", response);
 				setQuote(quote);
-				history.push("/quotes")
+				history.push("/quotes");
+				setModal(false);
 			})
 			.catch(error => {
 				console.log("Nope, it didn't take: ", error);
@@ -73,7 +74,7 @@ const QuoteAddForm = () => {
 					/>
 				</label>
 				<div className="button-group form">
-					<button>
+					<button className="success">
 						Add Mo'Quote
 					</button>
 					{/*<a href="/quotes" className="outline">Cancel</a>*/}
