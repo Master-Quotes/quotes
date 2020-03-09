@@ -1,10 +1,14 @@
 import React, {useContext} from 'react';
-import { Container, Button, Link } from 'react-floating-action-button'
 import { useHistory } from "react-router-dom";
+import { Container, Button, Link } from 'react-floating-action-button'
+
+//IMPORT CONTEXTS
+import GlobalContext from "../../context/GlobalContext";
 import SessionContext from "../../context/SessionContext";
 
 const ActionsButton = () => {
 
+	const { modal, setModal } = useContext(GlobalContext);
 	const { session, setSession } = useContext(SessionContext);
 	console.log("Seesion true?: ", session);
 
@@ -23,9 +27,7 @@ const ActionsButton = () => {
 				<></>
 			) : (
 				<>
-					<Link
-						href="/"
-						to="/"
+					<Button
 						tooltip="Leave Mo'Quotes app"
 						icon="cis-account-logout"
 						onClick={handleOnClick}
@@ -33,27 +35,24 @@ const ActionsButton = () => {
 				</>
 			)}
 			{history.location.pathname !== "/quotes/add" ? (
-				<Link
-					href="/quotes/add"
-					to="/quotes/add"
+				<Button
 					tooltip="Create Mo'Quotes"
 					icon="cis-plus-circle"
+					onClick={() => {setModal(true)}}
 				/>
 			) : (<></>)}
 			{history.location.pathname !== "/quotes" ? (
-				<Link
-					href="/quotes"
-					to="/quotes"
+				<Button
 					tooltip="A List of Mo'Quotes"
 					icon="cis-list"
+					onClick={() => history.push("/quotes")}
 				/>
 			) : (<></>)}
 			{history.location.pathname !== "/" ? (
-				<Link
-					href="/"
-					to="/"
+				<Button
 					tooltip="Go Home"
 					icon="cis-house"
+					onClick={() => history.push("/")}
 				/>
 			) : (<></>)}
 			<Button

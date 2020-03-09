@@ -1,5 +1,6 @@
 import React, { useState }                            from "react";
 import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
+import Modal                                          from "react-modal"
 
 // IMPORT ASSETS
 // import './css/App.css'
@@ -33,6 +34,7 @@ function App() {
   // let history                                           = useHistory();
 
   const [itemToggle, setItemToggle]                     = useState(0);
+  const [modal, setModal]                               = useState(false);
   const [login, setLogin]                               = useState(User);
   const [session, setSession]                           = useState(!!localStorage.getItem("token"));
   const [quote, setQuote]                               = useState(Quote);
@@ -40,7 +42,7 @@ function App() {
 
   return (
     <Router>
-      <GlobalContext.Provider value={{itemToggle, setItemToggle}}>
+      <GlobalContext.Provider value={{itemToggle, setItemToggle, modal, setModal}}>
         <UserContext.Provider value={{ login, setLogin }}>
           <SessionContext.Provider value={{ session, setSession }}>
             <QuoteContext.Provider value={{ quote, setQuote, quotes, setQuotes }}>
@@ -58,7 +60,12 @@ function App() {
                   />
                   <ProtectedRoute exact path="/user" component={UserDashboard} />
                   <ProtectedRoute exact path="/quotes" component={QuoteList} />
-                  <ProtectedRoute path="/quotes/add" component={QuoteAddForm} />
+                  <Modal
+                    isOpen={modal}
+                    onRequestClose={() => setModal(false)}
+                  >
+                    <QuoteAddForm />
+                  </Modal>
                 </main>
                 {/*<Footer />*/}
                 {session ? (<Actions />) : (<></>)}
