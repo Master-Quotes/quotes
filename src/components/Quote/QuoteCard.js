@@ -56,6 +56,8 @@ const QuoteCard = (props) => {
 
 	return (
 		<article className="card-quote">
+			<i className="cis-double-quote-serif-left left" />
+			<i className="cis-double-quote-serif-right right" />
 			{!itemToggle
 				? <>
 					<div className="card-options">
@@ -86,7 +88,7 @@ const QuoteCard = (props) => {
 			<div className="card-container">
 			{itemToggle === props.id
 				?  <>
-					<div className="card-body">
+					<div className="card-body body-form">
 						<form className="card-form">
 							<label>
 								<textarea
@@ -95,7 +97,6 @@ const QuoteCard = (props) => {
 									value={editQuote.quote}
 									onChange={handleChange}
 									rows="4"
-									cols="50"
 								/>
 							</label>
 							<label>
@@ -126,7 +127,6 @@ const QuoteCard = (props) => {
 					</div>
 				</>}
 			</div>
-
 		</article>
 	)
 };

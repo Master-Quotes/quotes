@@ -15,25 +15,34 @@
 			flex-direction column
 			justify-content space-between
 			//overflow hidden
-			.card-header
-				h2
-					margin-top 0
+			.card-container
+				z-index 1
+				.card-header
+					h2
+						margin-top 0
+						color black
+				.card-body
+					//background-color white
 					color black
-			.card-body
-				color black
-				padding 2rem
-				p
-					margin 0
-				.card-text
-					margin-top 1rem
-					span
-						display inline-block
-						font-weight bolder
-						width 18%
-			.card-footer
-				padding 2rem
-				h3
-					margin 0
+					padding 2rem
+					&.body-form
+						padding 1.25rem
+					p
+						margin 0
+					.card-text
+						margin-top 1rem
+						span
+							display inline-block
+							font-weight bolder
+							width 18%
+					textarea
+						resize vertical
+				.card-footer
+					border-top 2px solid #f0f0f0
+					padding 10px
+					h3
+						margin 0
+						padding 22px
 			.card-options
 				position absolute
 				width 128px
@@ -56,32 +65,35 @@
 								font-size 1rem
 								position relative
 								&.option-edit
-									background-color shade
-									border-color shade
+									background-color lighten(tertiary, 50%)
+									border-color lighten(tertiary, 50%)
+									&:hover
+										background-color tertiary
+										border-color tertiary
 								&.option-featured
-									background-color shade
-									border-color shade
+									background-color lighten(tertiary, 50%)
+									border-color lighten(tertiary, 50%)
+									&:hover
+										background-color tertiary
+										border-color tertiary
 								&.option-delete
-									background-color error
-									border-color error
-		&.folded
-			position relative
-			//box-shadow 0 0 0 rgba(0,0,0,0.8)
-			&:after
-				content ""
-				position absolute
-				bottom 0
-				right 0
-				width 0
-				height 0
-				border-top 40px solid #eee
-				border-right 40px solid white
-			&:before
-				content ""
-				position absolute
-				bottom 0
-				right 0
-				width 0
-				height 0
-				border-bottom 69px solid transparent
-				border-left 69px solid transparent
+									background-color  error
+									border-color  error
+									&:hover
+										background-color  darken(error, 25%)
+										border-color  darken(error, 25%)
+			i
+				&.left,
+				&.right
+					position absolute
+					color lighten(shade, 55%)
+					z-index 0
+				&.left
+					font-size 1.5rem
+					left 0.5rem
+					top 0.5rem
+				&.right
+					font-size 3rem
+					right 0.5rem
+					bottom 0.25rem
+					
