@@ -52,19 +52,21 @@ const ActionsButton = () => {
 				/>
 			) : (<></>)}
 			{history.location.pathname !== "/" ? (
-				<Button
-					className="item-action action-link link-home"
-					tooltip="Go Home"
-					icon="cis-house"
-					onClick={() => history.push("/")}
-				/>
-			) : (<></>)}
-			<Button
-				className="item-action action-link link-back"
-				tooltip="Back a page"
-				icon="cis-chevron-left"
-				onClick={() =>  history.goBack()}
-			/>
+				<>
+					<Button
+						className="item-action action-link link-home"
+						tooltip="Go Home"
+						icon="cis-house"
+						onClick={() => history.push("/")}
+					/>
+					<Button
+						className="item-action action-link link-back"
+						tooltip="Back a page"
+						icon="cis-chevron-left"
+						onClick={() =>  history.goBack()}
+					/>
+				</>
+				) : (<></>)}
 			<Button
 				className="fab-item item-action action-fab is-large text-white"
 				icon="cis-plus"
