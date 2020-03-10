@@ -1,5 +1,5 @@
 import React, { useContext, useMemo } from 'react';
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 // IMPORT UTILITIES
 import { axiosWithAuth } from "../../utilities/axiosWithAuth";
@@ -74,11 +74,14 @@ const UserAuth = ({role}) => {
 							required
 						/>
 					</label>
-					<input
-						type="submit"
-						value="Submit"
-						className="button"
-					/>
+					<div className="button-group">
+						<input
+							type="submit"
+							value="Submit"
+							className="button success"
+						/>
+						<Link to="/" className="outline">Cancel</Link>
+					</div>
 				</form>
 			</div>
 		</section>
