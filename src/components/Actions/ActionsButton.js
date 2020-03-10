@@ -60,6 +60,12 @@ const ActionsButton = () => {
 				/>
 			) : (<></>)}
 			<Button
+				className="item-action action-link link-back"
+				tooltip="Back a page"
+				icon="cis-chevron-left"
+				onClick={() =>  history.goBack()}
+			/>
+			<Button
 				className="fab-item item-action action-fab is-large text-white"
 				icon="cis-plus"
 				rotate={true}
